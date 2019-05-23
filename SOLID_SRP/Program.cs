@@ -4,13 +4,12 @@ using System.IO;
 using System.Linq;
 
 /// <summary>
-/// Single Responsibility Principle
+/// SOLID - Single Responsibility Principle:
+/// Every class (or similar structure) should have only one reason to change.
+///	Every class (or similar structure) should have only one job to do.
 /// </summary>
 namespace SOLID_SRP
 {
-    /// <summary>
-    /// Single Responsibility Principle
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

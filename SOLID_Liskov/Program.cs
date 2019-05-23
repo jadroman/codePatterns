@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Linq;
 
+/// <summary>
+/// SOLID - Liskov substitution Principle:
+/// You should be able to use any derived class instead of a parent class and have it behave in the same manner without modification.
+/// Derived class must be substitutable for its base class.
+/// </summary>
 namespace SOLID_Liskov
 {
+
     class Program
     {
         static void Main(string[] args)

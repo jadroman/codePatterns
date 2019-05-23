@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOLID_Liskov", "SOLID_Liskov\SOLID_Liskov.csproj", "{C8C1433C-33C8-47D1-8325-D278A36D5A73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLID_SRP", "SOLID_SRP\SOLID_SRP.csproj", "{64ABDA43-7360-454A-8908-61C4F417F886}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOLID_SRP", "SOLID_SRP\SOLID_SRP.csproj", "{64ABDA43-7360-454A-8908-61C4F417F886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLID_DIP", "SOLID_DIP\SOLID_DIP.csproj", "{87E59EBA-7699-496C-8497-0A1AB28FD8EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{64ABDA43-7360-454A-8908-61C4F417F886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64ABDA43-7360-454A-8908-61C4F417F886}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64ABDA43-7360-454A-8908-61C4F417F886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87E59EBA-7699-496C-8497-0A1AB28FD8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E59EBA-7699-496C-8497-0A1AB28FD8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E59EBA-7699-496C-8497-0A1AB28FD8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E59EBA-7699-496C-8497-0A1AB28FD8EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
