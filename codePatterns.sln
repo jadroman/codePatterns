@@ -13,7 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOLID_ISP", "SOLID_ISP\SOLI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOLID_OCP", "SOLID_OCP\SOLID_OCP.csproj", "{AA6023EB-F08B-467D-96EF-3062C6C51CA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creational_Singleton", "Creational_Singleton\Creational_Singleton.csproj", "{469E7811-F8EB-47FE-B767-7C7059988F43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creational_Singleton", "Creational_Singleton\Creational_Singleton.csproj", "{469E7811-F8EB-47FE-B767-7C7059988F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Structural_Facade", "Structural_Facade\Structural_Facade.csproj", "{87515D40-FAAF-42E9-9E41-0884639F74AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uml", "uml", "{7DC35290-C5FE-4618-A861-14828CFD669D}"
+	ProjectSection(SolutionItems) = preProject
+		Uml_arows.png = Uml_arows.png
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Behavioral_Iterator", "Behavioral_Iterator\Behavioral_Iterator.csproj", "{06F18EB8-3A64-449C-B69D-2B733146ACDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +54,14 @@ Global
 		{469E7811-F8EB-47FE-B767-7C7059988F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{469E7811-F8EB-47FE-B767-7C7059988F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{469E7811-F8EB-47FE-B767-7C7059988F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87515D40-FAAF-42E9-9E41-0884639F74AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87515D40-FAAF-42E9-9E41-0884639F74AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87515D40-FAAF-42E9-9E41-0884639F74AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87515D40-FAAF-42E9-9E41-0884639F74AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06F18EB8-3A64-449C-B69D-2B733146ACDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F18EB8-3A64-449C-B69D-2B733146ACDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F18EB8-3A64-449C-B69D-2B733146ACDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F18EB8-3A64-449C-B69D-2B733146ACDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
