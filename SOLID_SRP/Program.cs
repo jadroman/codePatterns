@@ -4,9 +4,15 @@ using System.IO;
 using System.Linq;
 
 /// <summary>
-/// SOLID - Single Responsibility Principle:
-/// Every class (or similar structure) should have only one reason to change.
-///	Every class (or similar structure) should have only one job to do.
+//  1. first we have fat class:
+//  	- Invoice Class:
+//  		- Add invoice
+//  		- Delete invoice
+//  		- Send Invoice email
+	    	
+//  2. than we have seperated classes
+//  	- invoice class
+//  	- emailSender class
 /// </summary>
 namespace SOLID_SRP
 {
@@ -14,99 +20,46 @@ namespace SOLID_SRP
     {
         static void Main(string[] args)
         {
-            var report = new WorkReport();
-            report.AddEntry(new WorkReportEntry { ProjectCode = "123Ds", ProjectName = "Project1", SpentHours = 5 });
-            report.AddEntry(new WorkReportEntry { ProjectCode = "987Fc", ProjectName = "Project2", SpentHours = 3 });
-
-            var scheduler = new Scheduler();
-            scheduler.AddEntry(new ScheduleTask { TaskId = 1, Content = "Do something now.", ExecuteOn = DateTime.Now.AddDays(5) });
-            scheduler.AddEntry(new ScheduleTask { TaskId = 2, Content = "Don't forget to...", ExecuteOn = DateTime.Now.AddDays(2) });
-
-            Console.WriteLine(report.ToString());
-            Console.WriteLine(scheduler.ToString());
-
-            var saver = new FileSaver();
-            saver.SaveToFile(@"Reports", "WorkReport.txt", report);
-            saver.SaveToFile(@"Schedulers", "Schedule.txt", scheduler);
+            Invoice invc = new Invoice();
+            invc.AddInvoice();
         }
     }
 
-    public class WorkReportEntry
+    public class Invoice
     {
-        public string ProjectCode { get; set; }
-        public string ProjectName { get; set; }
-        public int SpentHours { get; set; }
-    }
-
-    public class ScheduleTask
-    {
-        public int TaskId { get; set; }
-        public string Content { get; set; }
-        public DateTime ExecuteOn { get; set; }
-    }
-
-    public interface IEntryManager<T>
-    {
-        void AddEntry(T entry);
-        void RemoveEntryAt(int index);
-    }
-
-    public class FileSaver
-    {
-        public void SaveToFile<T>(string directoryPath, string fileName, IEntryManager<T> workReport)
+        public long InvAmount { get; set; }
+        public DateTime InvDate { get; set; }
+        private MailSender emailSender;
+        public Invoice()
         {
-            if (!Directory.Exists(directoryPath))
-            {
-                Directory.CreateDirectory(directoryPath);
-            }
-
-            File.WriteAllText(Path.Combine(directoryPath, fileName), workReport.ToString());
+            emailSender = new MailSender();
         }
-    }
-
-
-    public class WorkReport : IEntryManager<WorkReportEntry>
-    {
-        private readonly List<WorkReportEntry> _entries;
-
-        public WorkReport()
+        public void AddInvoice()
         {
-            _entries = new List<WorkReportEntry>();
+            // Here we need to write the Code for adding invoice
+            // Once the Invoice has been added, then send the  mail
+            emailSender.EMailFrom = "emailfrom@xyz.com";
+            emailSender.EMailTo = "emailto@xyz.com";
+            emailSender.EMailSubject = "Single Responsibility Princile";
+            emailSender.EMailBody = "A class should have only one reason to change";
+            emailSender.SendEmail();
         }
-
-        public void AddEntry(WorkReportEntry entry) => _entries.Add(entry);
-
-        public void RemoveEntryAt(int index) => _entries.RemoveAt(index);
-
-        /*MOVED TO ANOTHER CLASS*/
-        //public void SaveToFile(string directoryPath, string fileName)
-        //{
-        //    if (!Directory.Exists(directoryPath))
-        //    {
-        //        Directory.CreateDirectory(directoryPath);
-        //    }
-
-        //    File.WriteAllText(Path.Combine(directoryPath, fileName), ToString());
-        //}
-
-        public override string ToString() =>
-            string.Join(Environment.NewLine, _entries.Select(x => $"Code: {x.ProjectCode}, Name: {x.ProjectName}, Hours: {x.SpentHours}"));
-    }
-
-    public class Scheduler : IEntryManager<ScheduleTask>
-    {
-        private readonly List<ScheduleTask> _scheduleTasks;
-
-        public Scheduler()
+        public void DeleteInvoice()
         {
-            _scheduleTasks = new List<ScheduleTask>();
+            //Here we need to write the Code for Deleting the already generated invoice
         }
-
-        public void AddEntry(ScheduleTask entry) => _scheduleTasks.Add(entry);
-
-        public void RemoveEntryAt(int index) => _scheduleTasks.RemoveAt(index);
-
-        public override string ToString() =>
-            string.Join(Environment.NewLine, _scheduleTasks.Select(x => $"Task with id: {x.TaskId} with content: {x.Content} is going to be executed on: {x.ExecuteOn}"));
     }
+
+    public class MailSender
+    {
+        public string EMailFrom { get; set; }
+        public string EMailTo { get; set; }
+        public string EMailSubject { get; set; }
+        public string EMailBody { get; set; }
+        public void SendEmail()
+        {
+            // Here we need to write the Code for sending the mail
+        }
+    }
+
 }

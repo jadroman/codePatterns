@@ -31,7 +31,7 @@ namespace SOLID_DIP
             public string Content { get; set; }
             public void SendMessage()
             {
-                //Send email
+                Console.WriteLine("Email sent!");
             }
         }
 
@@ -44,7 +44,7 @@ namespace SOLID_DIP
             public string Message { get; set; }
             public void SendMessage()
             {
-                //Send sms
+                Console.WriteLine("SMS sent!");
             }
         }
 
@@ -71,6 +71,22 @@ namespace SOLID_DIP
 
         static void Main(string[] args)
         {
+            Email em = new Email
+            {
+                Content = "hello",
+                Subject = "sub",
+                ToAddress = "someMail@gmail.com"
+            };
+
+            SMS sm = new SMS
+            { Message = "hello", PhoneNumber = "123456" };
+
+            ICollection<IMessage> msgs = new List<IMessage>();
+            msgs.Add(em);
+            msgs.Add(sm);
+
+            Notification ntf = new Notification(msgs);
+            ntf.Send();
 
         }
     }
