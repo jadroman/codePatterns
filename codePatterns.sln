@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOLID_Liskov", "SOLID_Liskov\SOLID_Liskov.csproj", "{C8C1433C-33C8-47D1-8325-D278A36D5A73}"
 EndProject
@@ -24,7 +24,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uml", "uml", "{7DC35290-C5F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Behavioral_Iterator", "Behavioral_Iterator\Behavioral_Iterator.csproj", "{06F18EB8-3A64-449C-B69D-2B733146ACDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort_BubbleSort", "Sort_QuickSort\Sort_BubbleSort.csproj", "{C35E0ECB-1045-495C-9B30-4A6218EDAF8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sort_BubbleSort", "Sort_QuickSort\Sort_BubbleSort.csproj", "{C35E0ECB-1045-495C-9B30-4A6218EDAF8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{13ED824B-3CFF-42DE-AEA1-F090FB1A8EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentInterface", "FluentInterface\FluentInterface.csproj", "{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +72,14 @@ Global
 		{C35E0ECB-1045-495C-9B30-4A6218EDAF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C35E0ECB-1045-495C-9B30-4A6218EDAF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C35E0ECB-1045-495C-9B30-4A6218EDAF8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13ED824B-3CFF-42DE-AEA1-F090FB1A8EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13ED824B-3CFF-42DE-AEA1-F090FB1A8EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13ED824B-3CFF-42DE-AEA1-F090FB1A8EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13ED824B-3CFF-42DE-AEA1-F090FB1A8EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
