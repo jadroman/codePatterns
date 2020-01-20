@@ -1,5 +1,4 @@
 ﻿using System;
-using static Creational_Singleton.Program;
 
 /// <summary>
 /// Creational Singleton pattern:
@@ -11,64 +10,55 @@ using static Creational_Singleton.Program;
 namespace Creational_Singleton
 {
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Calculate.Instance.ValueOne = 10.5;
-            Calculate.Instance.ValueTwo = 5.5;
-            Console.WriteLine("Addition : " + Calculate.Instance.Addition());
-            Console.WriteLine("Subtraction : " + Calculate.Instance.Subtraction());
-            Console.WriteLine("Multiplication : " + Calculate.Instance.Multiplication());
-            Console.WriteLine("Division : " + Calculate.Instance.Division());
-            Console.WriteLine("\n----------------------\n");
-            Calculate.Instance.ValueTwo = 10.5;
-            Console.WriteLine("Addition : " + Calculate.Instance.Addition());
-            Console.WriteLine("Subtraction : " + Calculate.Instance.Subtraction());
-            Console.WriteLine("Multiplication : " + Calculate.Instance.Multiplication());
-            Console.WriteLine("Division : " + Calculate.Instance.Division());
-            Console.ReadLine();
-
-
-        }
-    }
-    public sealed class Calculate
+    /// <summary>
+    /// MainApp startup class for Structural
+    /// Singleton Design Pattern.
+    /// </summary>
+    class MainApp
     {
         /// <summary>
-        /// static constructors in C# are specified to execute only when an instance of the class is created 
-        /// or a static member is referenced, and to execute only once per AppDomain
+        /// Entry point into console application.
         /// </summary>
-        private Calculate()
+        static void Main()
         {
-            Console.WriteLine("\n------in constructor-----\n");
+            // Constructor is protected -- cannot use new
+            Singleton s1 = Singleton.Instance();
+            Singleton s2 = Singleton.Instance();
+
+            s1.broj = 1;
+            s2.broj = 2;
+
+            Console.WriteLine("s1.broj = " + s1.broj);
+            Console.WriteLine("s2.broj = " + s2.broj);
+
+            // Wait for user
+            Console.ReadKey();
         }
 
-        // we are using .NET 'Lazy' class so the object is instantiated the first time it's actually used. Not before that.
-        private static readonly Lazy<Calculate> lazy = new Lazy<Calculate>(() => new Calculate());
-        public static Calculate Instance
+    }
+
+    /// <summary>
+    /// The 'Singleton' class
+    /// </summary>
+    class Singleton
+    {
+        private static Singleton _instance;
+        public int broj;
+
+        // Constructor is 'protected'
+        protected Singleton(){}
+
+        public static Singleton Instance()
         {
-            get
+            // Uses lazy initialization.
+            // Note: this is not thread safe.
+            if (_instance == null)
             {
-                return lazy.Value;
+                _instance = new Singleton();
             }
+
+            return _instance;
         }
-        public double ValueOne { get; set; }
-        public double ValueTwo { get; set; }
-        public double Addition()
-        {
-            return ValueOne + ValueTwo;
-        }
-        public double Subtraction()
-        {
-            return ValueOne - ValueTwo;
-        }
-        public double Multiplication()
-        {
-            return ValueOne * ValueTwo;
-        }
-        public double Division()
-        {
-            return ValueOne / ValueTwo;
-        }
+
     }
 }

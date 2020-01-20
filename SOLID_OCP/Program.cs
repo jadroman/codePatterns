@@ -6,7 +6,7 @@ namespace SOLID_OCP
 {
     /// <summary>
     // first we have single class 'Invoice' which calculates Invoice discount depending on account type. 
-    // The problem is that every time we adding new account type we will need to change this method.
+    // The problem is that every time we add new account type we need to change this method.
     // So instead of changing the method every time we are adding new account type we will add new account type class.
     // it also can be done with interface instead base class
     /// </summary>
@@ -29,6 +29,7 @@ namespace SOLID_OCP
                 double finalAmount = 500;
                 return finalAmount;
             }
+
         }
 
 
