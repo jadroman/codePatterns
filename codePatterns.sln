@@ -28,7 +28,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sort_BubbleSort", "Sort_Qui
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{13ED824B-3CFF-42DE-AEA1-F090FB1A8EC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentInterface", "FluentInterface\FluentInterface.csproj", "{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentInterface", "FluentInterface\FluentInterface.csproj", "{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creational_AbstrFactory", "Creational_AbstrFactory\Creational_AbstrFactory.csproj", "{7DE974E5-940F-4B7B-B20E-19D17760CA63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +82,10 @@ Global
 		{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE974E5-940F-4B7B-B20E-19D17760CA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE974E5-940F-4B7B-B20E-19D17760CA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE974E5-940F-4B7B-B20E-19D17760CA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE974E5-940F-4B7B-B20E-19D17760CA63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
