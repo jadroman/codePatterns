@@ -32,7 +32,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentInterface", "FluentIn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creational_AbstrFactory", "Creational_AbstrFactory\Creational_AbstrFactory.csproj", "{7DE974E5-940F-4B7B-B20E-19D17760CA63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creational_Prototype", "Creational_Prototype\Creational_Prototype.csproj", "{23FBD82C-6FD5-4695-A28A-6B938D2DCA7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creational_Prototype", "Creational_Prototype\Creational_Prototype.csproj", "{23FBD82C-6FD5-4695-A28A-6B938D2DCA7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creational_FactoryMethod", "Creational_FactoryMethod\Creational_FactoryMethod.csproj", "{07624C42-8999-4514-B526-787C839C2C96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +94,10 @@ Global
 		{23FBD82C-6FD5-4695-A28A-6B938D2DCA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23FBD82C-6FD5-4695-A28A-6B938D2DCA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23FBD82C-6FD5-4695-A28A-6B938D2DCA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07624C42-8999-4514-B526-787C839C2C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07624C42-8999-4514-B526-787C839C2C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07624C42-8999-4514-B526-787C839C2C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07624C42-8999-4514-B526-787C839C2C96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
