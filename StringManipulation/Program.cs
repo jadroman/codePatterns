@@ -4,6 +4,10 @@ namespace StringManipulation
 {
     class Program
     {
+        /// <summary>
+        /// https://ankitsharmablogs.com/csharp-coding-questions-for-technical-interviews/
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.WriteLine("write string to reverse:");
