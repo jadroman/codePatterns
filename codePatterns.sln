@@ -13,16 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOLID_ISP", "SOLID_ISP\SOLI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOLID_OCP", "SOLID_OCP\SOLID_OCP.csproj", "{AA6023EB-F08B-467D-96EF-3062C6C51CA5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creational_Singleton", "GoF_Creational_Singleton\GoF_Creational_Singleton.csproj", "{469E7811-F8EB-47FE-B767-7C7059988F43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoF_Creational_Singleton", "GoF_Creational_Singleton\GoF_Creational_Singleton.csproj", "{469E7811-F8EB-47FE-B767-7C7059988F43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Structural_Facade", "GoF_Structural_Facade\GoF_Structural_Facade.csproj", "{87515D40-FAAF-42E9-9E41-0884639F74AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoF_Structural_Facade", "GoF_Structural_Facade\GoF_Structural_Facade.csproj", "{87515D40-FAAF-42E9-9E41-0884639F74AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uml", "uml", "{7DC35290-C5FE-4618-A861-14828CFD669D}"
 	ProjectSection(SolutionItems) = preProject
 		Uml_arows.png = Uml_arows.png
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Behavioral_Iterator", "GoF_Behavioral_Iterator\GoF_Behavioral_Iterator.csproj", "{06F18EB8-3A64-449C-B69D-2B733146ACDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoF_Behavioral_Iterator", "GoF_Behavioral_Iterator\GoF_Behavioral_Iterator.csproj", "{06F18EB8-3A64-449C-B69D-2B733146ACDF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sort_BubbleSort", "Sort_QuickSort\Sort_BubbleSort.csproj", "{C35E0ECB-1045-495C-9B30-4A6218EDAF8D}"
 EndProject
@@ -30,11 +30,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci", "Fibonacci\Fibo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentInterface", "FluentInterface\FluentInterface.csproj", "{5CEA2DF1-BDFC-4C49-AD3E-27D7FC9A3A33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creational_AbstrFactory", "GoF_Creational_AbstrFactory\GoF_Creational_AbstrFactory.csproj", "{7DE974E5-940F-4B7B-B20E-19D17760CA63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoF_Creational_AbstrFactory", "GoF_Creational_AbstrFactory\GoF_Creational_AbstrFactory.csproj", "{7DE974E5-940F-4B7B-B20E-19D17760CA63}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creational_Prototype", "GoF_Creational_Prototype\GoF_Creational_Prototype.csproj", "{23FBD82C-6FD5-4695-A28A-6B938D2DCA7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoF_Creational_Prototype", "GoF_Creational_Prototype\GoF_Creational_Prototype.csproj", "{23FBD82C-6FD5-4695-A28A-6B938D2DCA7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creational_FactoryMethod", "GoF_Creational_FactoryMethod\GoF_Creational_FactoryMethod.csproj", "{07624C42-8999-4514-B526-787C839C2C96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoF_Creational_FactoryMethod", "GoF_Creational_FactoryMethod\GoF_Creational_FactoryMethod.csproj", "{07624C42-8999-4514-B526-787C839C2C96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringManipulation", "StringManipulation\StringManipulation.csproj", "{F22F5D5D-8AE9-4E5E-BEAC-73D34D947A6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -98,6 +100,10 @@ Global
 		{07624C42-8999-4514-B526-787C839C2C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07624C42-8999-4514-B526-787C839C2C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07624C42-8999-4514-B526-787C839C2C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F22F5D5D-8AE9-4E5E-BEAC-73D34D947A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22F5D5D-8AE9-4E5E-BEAC-73D34D947A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22F5D5D-8AE9-4E5E-BEAC-73D34D947A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22F5D5D-8AE9-4E5E-BEAC-73D34D947A6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

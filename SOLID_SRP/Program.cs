@@ -25,7 +25,7 @@ namespace SOLID_SRP
         }
     }
 
-    public class Invoice
+    class Invoice
     {
         public long InvAmount { get; set; }
         public DateTime InvDate { get; set; }
@@ -50,7 +50,7 @@ namespace SOLID_SRP
         }
     }
 
-    public class MailSender
+    class MailSender
     {
         public string EMailFrom { get; set; }
         public string EMailTo { get; set; }
