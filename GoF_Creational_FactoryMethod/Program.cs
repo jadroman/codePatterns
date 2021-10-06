@@ -6,14 +6,10 @@ namespace Creational_FactoryMethod
     {
         static void Main(string[] args)
         {
-            BankAccountFactory localBankAccFact = new LocalBankAccountFactory();
-            BankAccountFactory foreignBankAccFact = new ForeignBankAccountFactory();
+            IBankAccountFactory bankAccFact = new BankAccountFactory();
 
-            IBankAccount localBankAcc = localBankAccFact.CreateBankAccount();
-            localBankAcc.DepositMoney(40);
-
-            IBankAccount foreignBankAcc = foreignBankAccFact.CreateBankAccount();
-            foreignBankAcc.DepositMoney(40);
+            IBankAccount bankAccount = bankAccFact.CreateBankAccount();
+            bankAccount.DepositMoney(40);
 
             Console.ReadKey();
         }
@@ -24,50 +20,30 @@ namespace Creational_FactoryMethod
         void DepositMoney(decimal ammount);
     }
 
-    class LocalBankAccount : IBankAccount
+    class BankAccount : IBankAccount
     {
-        public LocalBankAccount()
+        public BankAccount()
         {
-            Console.WriteLine("Local bank account created.");
+            Console.WriteLine("Bank account created.");
         }
 
         public void DepositMoney(decimal ammount)
         {
-            Console.WriteLine($"Deposit {ammount} of domestic currency.");
+            Console.WriteLine($"Deposit {ammount:C}");
         }
     }
 
-    class ForeignBankAccount : IBankAccount
+    interface IBankAccountFactory
     {
-        public ForeignBankAccount()
-        {
-            Console.WriteLine("Foreign bank account created.");
-        }
-
-        public void DepositMoney(decimal ammount)
-        {
-            Console.WriteLine($"Deposit {ammount} of foreign currency.");
-        }
+        IBankAccount CreateBankAccount();
     }
 
-    abstract class BankAccountFactory
+    class BankAccountFactory : IBankAccountFactory
     {
-        public abstract IBankAccount CreateBankAccount();
-    }
-
-    class LocalBankAccountFactory : BankAccountFactory
-    {
-        public override IBankAccount CreateBankAccount()
+        public IBankAccount CreateBankAccount()
         {
-            return new LocalBankAccount();
+            return new BankAccount();
         }
     }
 
-    class ForeignBankAccountFactory : BankAccountFactory
-    {
-        public override IBankAccount CreateBankAccount()
-        {
-            return new ForeignBankAccount();
-        }
-    }
 }
