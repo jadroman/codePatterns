@@ -4,7 +4,7 @@ namespace Creational_AbstrFactory
 {
     public enum OSAppearance
     {
-        OSX,
+        Linux,
         Win
     }
 
@@ -26,11 +26,11 @@ namespace Creational_AbstrFactory
         }
     }
 
-    class OSXFactory : IGUIFactory
+    class LinuxFactory : IGUIFactory
     {
         public IButton CreateButton()
         {
-            return new OSXButton();
+            return new LinuxButton();
         }
     }
 
@@ -42,11 +42,11 @@ namespace Creational_AbstrFactory
         }
     }
 
-    class OSXButton : IButton
+    class LinuxButton : IButton
     {
         public void Paint()
         {
-            Console.WriteLine("Render OSX style button");
+            Console.WriteLine("Render Linux style button");
         }
     }
 
@@ -55,7 +55,7 @@ namespace Creational_AbstrFactory
         static void Main()
         {
             // take this from config file or DB
-            var appearance = OSAppearance.OSX;
+            var appearance = OSAppearance.Linux;
 
             IGUIFactory factory;
 
@@ -64,11 +64,11 @@ namespace Creational_AbstrFactory
                 case OSAppearance.Win:
                     factory = new WinFactory();
                     break;
-                case OSAppearance.OSX:
-                    factory = new OSXFactory();
+                case OSAppearance.Linux:
+                    factory = new LinuxFactory();
                     break;
                 default:
-                    throw new System.NotImplementedException();
+                    throw new NotImplementedException();
             }
 
             var button = factory.CreateButton();
