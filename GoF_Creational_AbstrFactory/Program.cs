@@ -18,7 +18,7 @@ namespace Creational_AbstrFactory
         IButton CreateButton();
     }
 
-    class WinFactory : IGUIFactory
+    class WinGUIFactory : IGUIFactory
     {
         public IButton CreateButton()
         {
@@ -26,7 +26,7 @@ namespace Creational_AbstrFactory
         }
     }
 
-    class LinuxFactory : IGUIFactory
+    class LinuxGIUFactory : IGUIFactory
     {
         public IButton CreateButton()
         {
@@ -62,10 +62,10 @@ namespace Creational_AbstrFactory
             switch (appearance)
             {
                 case OSAppearance.Win:
-                    factory = new WinFactory();
+                    factory = new WinGUIFactory();
                     break;
                 case OSAppearance.Linux:
-                    factory = new LinuxFactory();
+                    factory = new LinuxGIUFactory();
                     break;
                 default:
                     throw new NotImplementedException();

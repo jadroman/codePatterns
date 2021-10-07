@@ -6,44 +6,48 @@ namespace Creational_FactoryMethod
     {
         static void Main(string[] args)
         {
-            IBankAccountFactory bankAccFact = new BankAccountFactory();
-
-            IBankAccount bankAccount = bankAccFact.CreateBankAccount();
-            bankAccount.DepositMoney(40);
-
-            Console.ReadKey();
+            IAccountFactory factory = new AccountFactory();
+            IAccount account = factory.Create();
+            account.DepositMoney(100.50m);
+            account.DepositMoney(100.50m);
         }
+
     }
 
-    interface IBankAccount
+    interface IAccountFactory
     {
-        void DepositMoney(decimal ammount);
+        IAccount Create();
     }
 
-    class BankAccount : IBankAccount
+    interface IAccount
     {
-        public BankAccount()
+        decimal Amount { get; }
+        void DepositMoney(decimal amount);
+    }
+
+    class AccountFactory : IAccountFactory
+    {
+        public IAccount Create()
         {
-            Console.WriteLine("Bank account created.");
-        }
-
-        public void DepositMoney(decimal ammount)
-        {
-            Console.WriteLine($"Deposit {ammount:C}");
+            return new Account();
         }
     }
 
-    interface IBankAccountFactory
+    class Account : IAccount
     {
-        IBankAccount CreateBankAccount();
-    }
-
-    class BankAccountFactory : IBankAccountFactory
-    {
-        public IBankAccount CreateBankAccount()
+        public Account()
         {
-            return new BankAccount();
+            Console.WriteLine("Account created.");
+            Console.WriteLine($"Current amount is {Amount:c}");
+        }
+
+        public decimal Amount { get; private set; }
+
+        public void DepositMoney(decimal amount)
+        {
+            Amount += amount;
+            Console.WriteLine($"Added {amount:c}");
+            Console.WriteLine($"Current amount is {Amount:c}");
         }
     }
-
 }
