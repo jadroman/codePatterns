@@ -7,66 +7,58 @@ using System.Threading.Tasks;
 namespace DataStructures
 {
     /// <summary>
-    /// LIFO (last in first out)
-    /// usage: 
-    ///     undo / redo functionality, 
-    ///     word reversal,
-    ///     stack back/forward on browsers
+    /// Stack data structure
+    ///     LIFO (last in first out)
+    ///     usage: 
+    ///         undo / redo functionality, 
+    ///         word reversal,
+    ///         stack back/forward on browsers
     /// </summary>
     class Stack
     {
        public static void RunExample()
         {
-            Stack<string> numbers = new Stack<string>();
-            numbers.Push("one");
-            numbers.Push("two");
-            numbers.Push("three");
-            numbers.Push("four");
-            numbers.Push("five");
+            string input = "123";
 
-            // A stack can be enumerated without disturbing its contents.
-            foreach (string number in numbers)
+            var myStack = new Stack<char>();
+
+            Console.WriteLine("Pushing '123' chars to the stack...");
+            Console.WriteLine("...now we are reading the stack");
+
+            foreach (var item in input)
             {
-                Console.WriteLine(number);
+                myStack.Push(item);
             }
 
-            Console.WriteLine("\nPopping '{0}'", numbers.Pop());
-            Console.WriteLine("Peek at next item to destack: {0}",
-                numbers.Peek());
-            Console.WriteLine("Popping '{0}'", numbers.Pop());
-
-            // Create a copy of the stack, using the ToArray method and the
-            // constructor that accepts an IEnumerable<T>.
-            Stack<string> stack2 = new Stack<string>(numbers.ToArray());
-
-            Console.WriteLine("\nContents of the first copy:");
-            foreach (string number in stack2)
+            foreach (var item in myStack)
             {
-                Console.WriteLine(number);
+                Console.WriteLine($"item: {item}");
             }
 
-            // Create an array twice the size of the stack and copy the
-            // elements of the stack, starting at the middle of the
-            // array.
-            string[] array2 = new string[numbers.Count * 2];
-            numbers.CopyTo(array2, numbers.Count);
-
-            // Create a second stack, using the constructor that accepts an
-            // IEnumerable(Of T).
-            Stack<string> stack3 = new Stack<string>(array2);
-
-            Console.WriteLine("\nContents of the second copy, with duplicates and nulls:");
-            foreach (string number in stack3)
+            Console.WriteLine($"myStack.Peek() gives us: {myStack.Peek()}");
+            Console.WriteLine("reading the stack after the peek:");
+            foreach (var item in myStack)
             {
-                Console.WriteLine(number);
+                Console.WriteLine($"item: {item}");
             }
 
-            Console.WriteLine("\nstack2.Contains(\"four\") = {0}",
-                stack2.Contains("four"));
+            myStack.Pop();
 
-            Console.WriteLine("\nstack2.Clear()");
-            stack2.Clear();
-            Console.WriteLine("\nstack2.Count = {0}", stack2.Count);
+            Console.WriteLine("reading the stack after pop");
+
+            foreach (var item in myStack)
+            {
+                Console.WriteLine($"item: {item}");
+            }
+
+            myStack.Push('4');
+
+            Console.WriteLine("reading the stack after push '4'");
+
+            foreach (var item in myStack)
+            {
+                Console.WriteLine($"item: {item}");
+            }
         }
     }
 }
