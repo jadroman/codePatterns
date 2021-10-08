@@ -3,7 +3,6 @@
 /// <summary>
 /// Structural Facade code pattern:
 /// A single class that represents an entire subsystem
-/// Provide a unified interface to a set of interfaces in a subsystem
 /// A Facade shields the user from the complex details of the system and provides them with a simplified 
 /// view of it which is easy to use. It also decouples the code that uses the system from the details 
 /// of the subsystems, making it easier to modify the system later.
@@ -77,7 +76,7 @@ namespace Structural_Facade
         public bool IsEligible(Customer cust, int amount)
 
         {
-            Console.WriteLine("{0} applies for {1:C} loan\n", cust.Name, amount);
+            Console.WriteLine($"{cust.Name} applies for {amount:C} loan");
             bool eligible = true;
 
             // Check creditworthyness of applicant
@@ -108,11 +107,8 @@ namespace Structural_Facade
                 Customer customer = new Customer("Ann McKinsey");
                 bool eligible = mortgage.IsEligible(customer, 125000);
                 
-                Console.WriteLine("\n" + customer.Name +
-                    " has been " + (eligible ? "Approved" : "Rejected"));
+                Console.WriteLine($"{customer.Name} has been {(eligible ? "Approved" : "Rejected")}");
 
-                // Wait for user
-                Console.ReadKey();
             }
         }
     }
