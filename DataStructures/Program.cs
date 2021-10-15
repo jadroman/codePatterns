@@ -6,7 +6,8 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            Stack.RunExample();
+            //Stack.RunExample();
+            //Queue.RunExample();
         }
     }
 }

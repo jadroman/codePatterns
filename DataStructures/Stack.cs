@@ -16,7 +16,7 @@ namespace DataStructures
     /// </summary>
     class Stack
     {
-       public static void RunExample()
+        public static void RunExample()
         {
             string input = "123";
 

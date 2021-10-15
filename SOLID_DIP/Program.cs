@@ -13,6 +13,27 @@ namespace SOLID_DIP
 
     class Program
     {
+        static void Main(string[] args)
+        {
+            IMessage em = new Email
+            {
+                Content = "hello",
+                Subject = "sub",
+                ToAddress = "someMail@gmail.com"
+            };
+
+            IMessage sm = new SMS
+            { Message = "hello", PhoneNumber = "123456" };
+
+            ICollection<IMessage> msgs = new List<IMessage>();
+            msgs.Add(em);
+            msgs.Add(sm);
+
+            Notification ntf = new Notification(msgs);
+            ntf.Send();
+
+        }
+
         /// <summary>
         /// We create this interface so our high and low level classes are depend on abstractions and not on each others. 
         /// </summary>
@@ -29,6 +50,7 @@ namespace SOLID_DIP
             public string ToAddress { get; set; }
             public string Subject { get; set; }
             public string Content { get; set; }
+
             public void SendMessage()
             {
                 Console.WriteLine("Email sent!");
@@ -42,6 +64,7 @@ namespace SOLID_DIP
         {
             public string PhoneNumber { get; set; }
             public string Message { get; set; }
+
             public void SendMessage()
             {
                 Console.WriteLine("SMS sent!");
@@ -53,12 +76,13 @@ namespace SOLID_DIP
         /// </summary>
         public class Notification
         {
-            private ICollection<IMessage> _messages;
+            private readonly ICollection<IMessage> _messages;
 
             public Notification(ICollection<IMessage> messages)
             {
-                this._messages = messages;
+                _messages = messages;
             }
+
             public void Send()
             {
                 foreach (var message in _messages)
@@ -66,28 +90,6 @@ namespace SOLID_DIP
                     message.SendMessage();
                 }
             }
-        }
-
-
-        static void Main(string[] args)
-        {
-            Email em = new Email
-            {
-                Content = "hello",
-                Subject = "sub",
-                ToAddress = "someMail@gmail.com"
-            };
-
-            SMS sm = new SMS
-            { Message = "hello", PhoneNumber = "123456" };
-
-            ICollection<IMessage> msgs = new List<IMessage>();
-            msgs.Add(em);
-            msgs.Add(sm);
-
-            Notification ntf = new Notification(msgs);
-            ntf.Send();
-
         }
     }
 }
